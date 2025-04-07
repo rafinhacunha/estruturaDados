@@ -1,0 +1,10 @@
+Exemplo simples:
+
+Gere arrays de tamanhos crescentes (p. ex. 100, 1.000, 10.000...).
+Implemente busca linear e busca binária para encontrar um elemento.
+Meça o tempo de cada busca.
+
+Resultado:
+
+A busca linear (O(n)) cresce rapidamente com o tamanho do array.
+A busca binária (O(log n)) se mantém bem mais eficiente em arrays grandes.

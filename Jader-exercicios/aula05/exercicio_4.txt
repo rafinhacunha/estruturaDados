@@ -1,0 +1,1 @@
+Escolheria uma lista encadeada, pois permite inserções e remoções em O(1) (se o nó for conhecido), sem a necessidade de realocação ou deslocamento de elementos, ao contrário do vetor que, em inserções/remover em posições arbitrárias, pode chegar a O(n).

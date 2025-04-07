@@ -1,0 +1,7 @@
+Lista Encadeada Circular:
+Ao inserir, faça com que o ponteiro do último nó aponte para a cabeça, em vez de NULL
+Na remoção, se remover a cabeça, atualize o ponteiro do último nó para a nova cabeça.
+
+Lista Duplamente Encadeada Circular:
+Na inserção, ajuste o next do último nó para apontar para a cabeça e o prev da cabeça para apontar para o último nó.
+Na remoção, se remover a cabeça, atualize o prev da nova cabeça para o último nó e o next do último nó para a nova cabeça.
