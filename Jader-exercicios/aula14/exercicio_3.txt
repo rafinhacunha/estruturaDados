@@ -1,0 +1,2 @@
+Ao buscar um item em uma lista pequena exibida visualmente, como nomes de convidados em uma folha impressa, é mais rápido percorrer a lista linha por linha (busca sequencial) do que ordená-la para aplicar busca binária — especialmente se a lista mudar com frequência.
+

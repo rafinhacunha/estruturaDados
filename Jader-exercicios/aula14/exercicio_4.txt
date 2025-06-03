@@ -1,0 +1,1 @@
+Porque cada chamada recursiva cria uma nova entrada na pilha de chamadas (call stack). No pior caso, com log2(n)  chamadas, pode haver uso extra de memória comparado à versão iterativa, que reutiliza variáveis em um único loop. A recursiva é mais elegante, mas menos eficiente em termos de uso de memória.
