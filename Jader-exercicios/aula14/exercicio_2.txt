@@ -1,0 +1,5 @@
+Busca binária:
+log2(2.000.000) ≈ 21 comparações no pior caso.
+
+Busca sequencial: 
+No pior caso, 2.000.000 comparações (último elemento ou inexistente).

@@ -1,0 +1,6 @@
+Conhecer diversas estruturas de dados permite escolher a mais adequada para cada problema, otimizando desempenho e memória.
+Por exemplo:
+
+Para buscas rápidas, usar um HashMap pode reduzir o tempo de acesso em comparação a uma lista encadeada.
+
+Em cenários com ordenações frequentes, uma árvore balanceada pode ser mais eficiente que um array comum.

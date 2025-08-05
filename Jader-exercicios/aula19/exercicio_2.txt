@@ -1,0 +1,6 @@
+Usar Min-Heap de tamanho 3:
+
+Inserir até 3 elementos.
+Se novo elemento < maior dos 3 atuais, substitui o maior.
+O terceiro menor será a raiz do heap.
+

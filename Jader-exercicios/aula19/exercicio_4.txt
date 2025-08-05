@@ -1,0 +1,7 @@
+Max-Heap: construir heap O(n) + extrair k vezes O(k log n).
+Melhor: usar Min-Heap de tamanho k:
+
+Inserir elementos; se heap > k, remove menor.
+
+Raiz = k-ésimo maior.
+Complexidade: O(n log k).

@@ -1,0 +1,35 @@
+1. Limite inferior de comparação (Ω(n log n)):
+Algoritmos baseados em comparação (como Merge Sort) têm esse limite por causa da árvore de decisão usada para comparar elementos.
+Linear Sorts (Counting, Radix, Bucket) evitam comparações diretas, usando propriedades dos dados (como dígitos ou contagens) para ordenar em tempo linear.
+
+2. Estabilidade no Radix Sort:
+Radix Sort depende de ordenações estáveis em cada dígito.
+Exemplo: [123a, 123b] → ordenando por letras: se não for estável, a ordem de a e b pode ser trocada, corrompendo o resultado final.
+
+3. Counting Sort com números negativos:
+Sim, é possível.
+Adaptação: ajustar os índices do array de contagem com um deslocamento (offset = -min).
+Complexidade: continua O(n + k), onde k = max - min.
+
+4. Complexidade de espaço:
+Counting Sort: O(n + k) — pode ser ruim se k for muito grande.
+Radix Sort: O(n + k) por dígito.
+Bucket Sort: O(n + número de baldes), dependendo da distribuição.
+Problemas surgem quando:
+k ≫ n no Counting;
+muitos dígitos no Radix;
+má distribuição no Bucket.
+
+5. Quando Counting e Radix são O(n):
+Counting: se k = O(n) (poucos valores distintos).
+Radix: se o número de dígitos d for pequeno (constante), e o Counting interno for O(n).
+
+Exercícios Teóricos II
+6. Radix Sort com strings:
+Mesmo comprimento: ordenar do último caractere ao primeiro.
+Comprimentos variáveis: normalizar com padding (e.g., \0) ou usar MSD Radix (começa do primeiro caractere).
+
+7. Bucket Sort – impacto da distribuição:
+Todos idênticos: tudo vai para um único balde → vira O(n²) com Insertion Sort.
+Muitos em poucos baldes: baldes desbalanceados → perda de desempenho.
+Ideal: dados uniformemente distribuídos.

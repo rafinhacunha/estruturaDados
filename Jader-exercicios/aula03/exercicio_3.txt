@@ -1,0 +1,4 @@
+Se uma exceção ocorrer antes do delete[], a memória alocada não será liberada, causando um memory leak.
+Como evitar:
+Utilização contêineres como std::vector ou std::array.
+Utilização de smart pointers, que liberam a memória automaticamente ao sair do escopo.

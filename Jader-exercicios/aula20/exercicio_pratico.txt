@@ -1,0 +1,36 @@
+1️. Construção da árvore
+A string é "BANANA$".
+
+Cada sufixo começa em uma posição (índices 1 a 7):
+
+1: BANANA$
+
+2: ANANA$
+
+3: NANA$
+
+4: ANA$
+
+5: NA$
+
+6: A$
+
+7: $
+
+A árvore de sufixo compactada agrupa prefixos comuns para reduzir espaço.
+
+2️. Estrutura de nós e arestas
+Cada nó representa um ponto de divisão de prefixos comuns.
+
+Cada aresta armazena uma substring representada por um intervalo [i..j] da string original, sem duplicar caracteres na memória.
+
+3️. Busca da substring "ANA"
+Começamos na raiz e seguimos as arestas:
+
+Procuramos "ANA":
+
+Primeiro "A": segue aresta iniciando em índice 2 ou 4 ou 6.
+
+Depois "NA": continua no mesmo ramo até encontrar o final da substring.
+
+Se conseguimos percorrer toda a substring, ela existe na string original.

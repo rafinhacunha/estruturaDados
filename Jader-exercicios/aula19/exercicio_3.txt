@@ -1,0 +1,9 @@
+HeapSort: O(n log n) sempre; in-place; estável: ❌.
+QuickSort: Média O(n log n), pior O(n²); rápido na prática; in-place.
+MergeSort: Sempre O(n log n); estável; usa memória extra O(n).
+
+✅ Preferência:
+
+Pouca memória → HeapSort.
+Melhor desempenho médio → QuickSort.
+Estabilidade → MergeSort.

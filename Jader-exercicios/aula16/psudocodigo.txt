@@ -1,0 +1,54 @@
+classe NoGenerico{
+    valor
+    filhos: lista de NoGenerico
+
+}
+Explicação:
+Um nó genérico precisa armazenar:
+Um valor/dado qualquer.
+Uma lista de filhos (podendo ter 0, 1, 2... n filhos).
+
+struct NoGenerico {
+    int valor;
+    vector<NoGenerico*> filhos;
+};
+
+Cálculo da Altura de Árvore Binária (em C++)
+Definição:
+Altura da árvore vazia: -1
+Altura da folha: 0
+
+struct No {
+    int valor;
+    No* esquerdo;
+    No* direito;
+};
+
+int calcularAltura(No* raiz) {
+    if (raiz == nullptr) return -1;
+    int altEsq = calcularAltura(raiz->esquerdo);
+    int altDir = calcularAltura(raiz->direito);
+    return 1 + max(altEsq, altDir);
+}
+
+Percursos (Pré-Ordem, Em-Ordem, Pós-Ordem)
+void preOrdem(No* raiz) {
+    if (raiz == nullptr) return;
+    cout << raiz->valor << " ";
+    preOrdem(raiz->esquerdo);
+    preOrdem(raiz->direito);
+}
+
+void emOrdem(No* raiz) {
+    if (raiz == nullptr) return;
+    emOrdem(raiz->esquerdo);
+    cout << raiz->valor << " ";
+    emOrdem(raiz->direito);
+}
+
+void posOrdem(No* raiz) {
+    if (raiz == nullptr) return;
+    posOrdem(raiz->esquerdo);
+    posOrdem(raiz->direito);
+    cout << raiz->valor << " ";
+}

@@ -1,0 +1,18 @@
+Árvore fornecida:
+         F
+       /   \
+      B     G
+     / \     \
+    A   D     I
+       / \
+      C   E
+
+Percursos da árvore
+Pré-Ordem (visita antes dos filhos):
+F, B, A, D, C, E, G, I
+
+Em-Ordem (esquerda → raiz → direita):
+A, B, C, D, E, F, G, I
+
+Pós-Ordem (filhos → raiz):
+A, C, E, D, B, I, G, F

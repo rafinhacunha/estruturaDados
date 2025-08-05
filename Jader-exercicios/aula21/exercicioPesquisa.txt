@@ -1,0 +1,59 @@
+1. (Pesquisa) SA-IS vs. Ukkonen
+SA-IS (Suffix Array - Induced Sorting): Algoritmo eficiente, baseado em dividir os sufixos em S-type e L-type e fazer ordenações parciais. Funciona em tempo linear, com baixo uso de memória.
+
+Ukkonen: Constrói árvore de sufixos online, também linear, mas usa estruturas mais complexas e mais memória.
+
+Comparação:
+
+SA-IS é mais leve e prático para arquivos grandes e compressão.
+
+Ukkonen é ideal se for necessário acessar rapidamente substrings ou fazer modificações dinâmicas.
+
+2. (Desafio) Implementar árvore de sufixo ingênua O(m²)
+Estrutura básica em C++:
+struct Node {
+    map<char, Node*> children;
+    string suffix;
+};
+
+Node* build_suffix_tree(string s) {
+    Node* root = new Node();
+    for (int i = 0; i < s.size(); i++) {
+        Node* current = root;
+        for (int j = i; j < s.size(); j++) {
+            if (!current->children.count(s[j]))
+                current->children[s[j]] = new Node();
+            current = current->children[s[j]];
+        }
+        current->suffix = s.substr(i);
+    }
+    return root;
+}
+
+3. (Pesquisa em Bioinformática) FM-Index e Bowtie2
+Bowtie2 usa o FM-Index, que é baseado em BWT + Suffix Array + estruturas auxiliares.
+
+O FM-Index permite buscas em tempo logarítmico com pouca memória.
+
+O backtracking exato permite reconstruir posições no texto original sem armazenar o texto completo, mapeando leituras curtas com rapidez.
+
+É eficiente porque:
+
+Lida bem com milhões de leituras curtas.
+
+Usa pouca RAM.
+
+Reduz necessidade de armazenar grandes árvores
+
+4. (Análise) Huffman vs. BWT
+A codificação de Huffman funciona muito bem quando há frequência desigual de símbolos.
+
+A BWT, por outro lado, reorganiza a string para agrupar símbolos iguais, aumentando compressibilidade com RLE e Huffman.
+
+Combinação ideal:
+
+Primeiro aplicar BWT → agrupa símbolos.
+
+Depois aplicar Huffman → codifica eficientemente.
+
+Resposta: Huffman sozinho não é ideal para BWT, mas combinado com ela forma uma compressão muito eficaz, como no bzip2.

@@ -1,0 +1,6 @@
+Implementação resumida:
+
+void buildHeap(vector<int>& h) {
+    for (int i = h.size()/2 - 1; i >= 0; i--)
+        siftDown(i, h);
+}

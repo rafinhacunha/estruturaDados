@@ -1,0 +1,47 @@
+1. Suffix Array da string S = ABACATE$:
+
+Sufixos de S ordenados lexicograficamente:
+0: ABACATE$
+1: BACATE$
+2: ACATE$
+3: CATE$
+4: ATE$
+5: TE$
+6: E$
+7: $
+
+Ordenando:
+7: $
+0: ABACATE$
+2: ACATE$
+4: ATE$
+1: BACATE$
+3: CATE$
+6: E$
+5: TE$
+
+Suffix Array:
+[7, 0, 2, 4, 1, 3, 6, 5]
+
+Árvore de Sufixo:
+
+Raiz com 8 ramos, cada um com uma das primeiras letras dos sufixos.
+Cada ramo segue os sufixos da string, com marcação nos nós-folha indicando a posição inicial.
+
+2. Descreva com suas palavras o papel do “Ponteiro Ativo” no algoritmo de Ukkonen.
+O ponteiro ativo é uma referência que indica onde estamos inserindo novos sufixos na árvore durante a construção. Ele é essencial para evitar começar a inserção do zero a cada passo, permitindo continuidade eficiente na construção. Isso é o que torna o algoritmo de Ukkonen online e eficiente, mantendo o tempo linear.
+
+3. Se uma busca termina no meio de uma aresta...
+Se termina no meio de uma aresta: significa que o padrão P ocorre na string, mas não exatamente no início de um sufixo. É uma ocorrência interna, parcial dentro de um ramo.
+
+Se termina em um nó interno: significa que o padrão ocorre exatamente como prefixo de vários sufixos. É uma ocorrência clara e direta.
+
+5. Discussão sobre compressibilidade da BWT
+BWT(S1 = "BBBAAA$") → "AABABB$"
+BWT(S2 = "BABABA$") → "ABBBAA$"
+
+A saída da BWT de S1 tem grupos mais repetitivos (AABABB tem "AA", "BB"), o que favorece compressão com RLE ou Huffman.
+
+A de S2 é mais alternada, com menos repetições agrupadas, dificultando compressão.
+
+Conclusão: A BWT de S1 é mais compressível.

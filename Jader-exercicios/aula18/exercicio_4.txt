@@ -1,0 +1,1 @@
+Busca arbitrária em Heap é O(n), pois não há estrutura de ordenação completa, só a relação pai > filhos.

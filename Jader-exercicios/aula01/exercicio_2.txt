@@ -1,0 +1,5 @@
+Árvore balanceada (ex. AVL/Red-Black): mantém ordenação e permite inserções/remoções eficientes.
+
+HashMap (tabela hash): busca em tempo médio O(1), ordem irrelevante.
+
+Array (vetor): acesso direto à posição k em O(1).

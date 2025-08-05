@@ -1,0 +1,1 @@
+Todas as sequências podem representar um Max-Heap, pois em todas os pais são maiores que seus filhos.

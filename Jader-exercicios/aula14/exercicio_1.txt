@@ -1,0 +1,1 @@
+Porque a busca binária depende da ordem dos elementos para decidir em qual metade continuar a busca. Se a lista estiver desordenada, ela pode eliminar incorretamente partes da lista que contêm o elemento procurado, resultando em erro.

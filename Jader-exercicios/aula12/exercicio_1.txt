@@ -1,0 +1,48 @@
+a seguir mostra-se o estado do array **após cada passagem completa (cada iteração do loop externo `i`) em três algoritmos de ordenação:
+
+1. Bubble Sort (versão otimizada)
+Passagem 1:
+[7, 3, 9, 2, 5]  → [3, 7, 9, 2, 5]
+                → [3, 7, 2, 9, 5]
+                → [3, 7, 2, 5, 9]
+
+Passagem 2:
+[3, 7, 2, 5, 9]  → [3, 2, 7, 5, 9]
+                → [3, 2, 5, 7, 9]
+
+Passagem 3: 
+[3, 2, 5, 7, 9]  → [2, 3, 5, 7, 9]
+
+Passagem 4: 
+[2, 3, 5, 7, 9]  (nenhuma troca—já está ordenado)
+
+
+Selection Sort
+
+Passagem 1 (i=0): menor em A[0..4] = 2 → trocar 7↔2
+→ [2, 3, 9, 7, 5]
+
+Passagem 2 (i=1): menor em A[1..4] = 3 → trocar 3↔3 (sem mudança)
+→ [2, 3, 9, 7, 5]
+
+Passagem 3 (i=2): menor em A[2..4] = 5 → trocar 9↔5
+→ [2, 3, 5, 7, 9]
+
+Passagem 4 (i=3): menor em A[3..4] = 7 → trocar 7↔7 (sem mudança)
+→ [2, 3, 5, 7, 9]
+
+Passagem 5 (i=4): só resta [9] → fica [2, 3, 5, 7, 9]
+
+Insertion Sort
+
+Passagem 1 (i=1): “insere” 3 em ⟨7⟩ →
+→ [3, 7, 9, 2, 5]
+
+Passagem 2 (i=2): “insere” 9 em ⟨3, 7⟩ (já está no lugar) →
+→ [3, 7, 9, 2, 5]
+
+Passagem 3 (i=3): “insere” 2 em ⟨3, 7, 9⟩ →
+→ [2, 3, 7, 9, 5]
+
+Passagem 4 (i=4): “insere” 5 em ⟨2, 3, 7, 9⟩ →
+→ [2, 3, 5, 7, 9]
