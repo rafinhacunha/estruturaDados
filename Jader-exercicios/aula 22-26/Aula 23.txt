@@ -1,0 +1,99 @@
+ex 1 - 23
+
+Posição 1: maca$
+Posição 2: aca$
+Posição 3: ca$
+Posição 4: a$
+Posição 5: $
+
+1. $ (pos 5)
+2. a$ (pos 4)
+3. aca$ (pos 2)
+4. ca$ (pos 3)
+5. maca$ (pos 1)
+
+SA = [5, 4, 2, 3, 1]
+
+---------------------
+ex 2 - 23
+1. maca$
+2. aca$m
+3. ca$ma
+4. a$mac
+5. $maca
+
+1. $maca
+2. a$mac
+3. aca$m
+4. ca$ma
+5. maca$
+
+Matriz ordenada:
+F    L
+$    a
+a    c
+a    $
+c    m
+m    a
+
+BWT (L): "ac$ma"
+Coluna F: "$aacm"
+
+-------------------------
+ex3 - 23
+A coluna F da matriz BWT contém o primeiro caractere de cada rotação ordenada. Como as rotações estão ordenadas lexicograficamente, a primeira coluna consiste em todos os caracteres do texto original, mas ordenados alfabeticamente.
+
+Isso ocorre porque:
+
+A ordenação é feita pela string completa
+
+O primeiro caractere de cada linha ordenada determina a ordem inicial
+
+Portanto, a coluna F é essencialmente uma versão ordenada de todos os caracteres do texto
+
+----------------------------------
+ex 4 - 23
+Sufixos ordenados:
+1. $ (pos 12)
+2. a$ (pos 11)
+3. abra$ (pos 8)
+4. abracadabra$ (pos 1)
+5. acadabra$ (pos 4)
+6. adabra$ (pos 6)
+7. bra$ (pos 9)
+8. bracadabra$ (pos 2)
+9. cadabra$ (pos 5)
+10. dabra$ (pos 7)
+11. ra$ (pos 10)
+12. racadabra$ (pos 3)
+
+SA = [12, 11, 8, 1, 4, 6, 9, 2, 5, 7, 10, 3]
+
+Matriz ordenada (primeiras e últimas colunas):
+F    L
+$    a
+a    r
+a    d
+a    $
+a    r
+a    c
+b    a
+b    a
+c    a
+d    a
+r    b
+r    b
+
+BWT (L): "ard$rcaaabar"
+
+As ocorrências de 'a' na coluna F estão nas posições: 2, 3, 4, 5, 6
+As ocorrências correspondentes na coluna L estão nas posições: 7, 8, 9, 10, 1
+
+LF-Mapping mostra que:
+- O 'a' na posição 2 de F corresponde ao 'a' na posição 7 de L
+- O 'a' na posição 3 de F corresponde ao 'a' na posição 8 de L
+- E assim sucessivamente...
+
+Isso permite navegar do final para o início da string durante a busca reversa.
+
+-----------------------------------------

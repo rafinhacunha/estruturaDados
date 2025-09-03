@@ -1,0 +1,105 @@
+EX 1 - 25
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+map<char, int> build_c_table(const string& L) {
+    map<char, int> c_table;
+    
+    // Passo 1: Contar ocorrências de cada caractere
+    map<char, int> frequency;
+    for (char c : L) {
+        frequency[c]++;
+    }
+    
+    // Passo 2: Ordenar caracteres lexicograficamente
+    vector<char> sorted_chars;
+    for (auto& pair : frequency) {
+        sorted_chars.push_back(pair.first);
+    }
+    sort(sorted_chars.begin(), sorted_chars.end());
+    
+    // Passo 3: Calcular valores da C-Table
+    int cumulative = 0;
+    for (char c : sorted_chars) {
+        c_table[c] = cumulative;
+        cumulative += frequency[c];
+    }
+    
+    return c_table;
+}
+
+// Função auxiliar para testar
+int main() {
+    string L = "ipssm$pissii"; // BWT de "mississippi$"
+    map<char, int> c_table = build_c_table(L);
+    
+    cout << "C-Table:" << endl;
+    for (auto& pair : c_table) {
+        cout << "'" << pair.first << "': " << pair.second << endl;
+    }
+    
+    return 0;
+}
+
+-----------------
+EX2 - 25
+int rank(char c, const string& L, int i) {
+    // 1. Encontrar o super-bloco mais próximo
+    int block_index = i / 128;        // 500/128 = 3 (bloco 3)
+    int block_start = block_index * 128; // 384
+    
+    // 2. Recuperar valor acumulado do checkpoint
+    int count = checkpoint_table[c][block_index]; // valor em posição 384
+    
+    // 3. Contar manualmente do início do bloco até a posição i
+    for (int j = block_start; j < i; j++) {
+        if (L[j] == c) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+------------------------------
+EX3 - 25
+
+B = 4 (muito pequeno):
+
+Vantagem: Precisão máxima, poucas operações manuais
+
+Desvantagem:
+
+Alto uso de memória: Tabela de checkpoints será 32× maior
+
+Overhead de armazenamento: Muitos valores para manter
+
+Acesso mais lento: Mais indireção na tabela
+
+B = n/2 (muito grande):
+
+Vantagem:
+
+Baixo uso de memória: Tabela de checkpoints mínima
+
+Acesso rápido: Poucos checkpoints para consultar
+
+Desvantagem:
+
+Contagem lenta: Pode precisar percorrer até n/2 posições manualmente
+
+Pior caso O(n): Perde a eficiência do FM-Index
+
+Desbalanceamento: Operações rank tornam-se ineficientes
+
+Tamanho ideal: Normalmente B = 32 a 256, balanceando:
+
+Uso de memória (∼n/B bytes por caractere)
+
+Tempo de consulta (O(B) no pior caso)
+
+Overhead prático de implementação
