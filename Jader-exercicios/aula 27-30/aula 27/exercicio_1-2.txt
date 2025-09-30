@@ -1,0 +1,137 @@
+**Exercício 1 – Construção Completa**
+
+Inserir na ordem: **14, 17, 11, 7, 53, 4, 13**
+
+1. Insere 14
+
+```
+14
+```
+
+2. Insere 17 (vai para direita de 14)
+
+```
+  14
+    \
+     17
+```
+
+3. Insere 11 (vai para esquerda de 14)
+
+```
+    14
+   /  \
+ 11    17
+```
+
+(Árvore balanceada)
+
+4. Insere 7 (vai para esquerda de 11)
+
+```
+    14
+   /  \
+ 11    17
+ /
+7
+```
+
+(Árvore ainda balanceada)
+
+5. Insere 53 (vai para direita de 17)
+
+```
+    14
+   /  \
+ 11    17
+ /       \
+7         53
+```
+
+(Árvore ainda balanceada)
+
+6. Insere 4 (vai para esquerda de 7)
+
+```
+      14
+     /  \
+   11    17
+   /       \
+  7         53
+ /
+4
+```
+
+➡ Nó **14** fica desbalanceado (-2).
+Caso: **E-E** (Esquerda-Esquerda).
+Rotação: **Rotação simples à direita em 14**.
+
+Após rotação:
+
+```
+      11
+     /  \
+    7    14
+   /       \
+  4         17
+               \
+                53
+```
+
+7. Insere 13 (vai para esquerda de 14)
+
+```
+      11
+     /  \
+    7    14
+   /    /  \
+  4    13   17
+               \
+                53
+```
+
+Árvore final está balanceada.
+
+---
+
+**Exercício 2 – Inserção na árvore dada**
+
+Árvore inicial:
+
+```
+        30
+       /  \
+     20    40
+    /  \   / \
+   10  25 35  50
+```
+
+Inserindo **38**:
+Vai para direita de 30 → direita de 40 → direita de 35 → esquerda de 38.
+
+Árvore fica:
+
+```
+        30
+       /  \
+     20    40
+    /  \   / \
+   10  25 35  50
+             \
+              38
+```
+
+➡ Nó **40** fica desbalanceado (altura esquerda=2, direita=1).
+Tipo de caso: **D-E** (Direita-Esquerda).
+Rotação necessária: **Rotação dupla (direita em 35 e depois esquerda em 40)**.
+
+Após rotação:
+
+```
+        30
+       /  \
+     20    38
+    /  \   / \
+   10  25 35  40
+                 \
+                  50

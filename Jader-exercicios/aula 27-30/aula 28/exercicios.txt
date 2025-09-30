@@ -1,0 +1,109 @@
+## Exercício 1: Construção Completa
+
+1. Insere 14
+
+```
+14
+```
+
+2. Insere 17
+
+```
+  14
+    \
+     17
+```
+
+3. Insere 11
+
+```
+    14
+   /  \
+ 11    17
+```
+
+4. Insere 7
+
+```
+    14
+   /  \
+ 11    17
+ /
+7
+```
+
+5. Insere 53
+
+```
+    14
+   /  \
+ 11    17
+ /       \
+7         53
+```
+
+6. Insere 4 → Desbalanceamento no nó 14 (caso E-E). Rotação simples à direita.
+
+```
+      11
+     /  \
+    7    14
+   /       \
+  4         17
+               \
+                53
+```
+
+7. Insere 13
+
+```
+      11
+     /  \
+    7    14
+   /    /  \
+  4    13   17
+               \
+                53
+```
+
+Árvore final:
+
+```
+      11
+     /  \
+    7    14
+   /    /  \
+  4    13   17
+               \
+                53
+```
+
+---
+
+## Exercício 2: Inserção de 38
+
+Árvore inicial:
+
+```
+        30
+       /  \
+     20    40
+    /  \   / \
+   10  25 35  50
+```
+
+Inserindo 38:
+
+```
+        30
+       /  \
+     20    40
+    /  \   / \
+   10  25 35  50
+             \
+              38
+```
+
+➡ Nó desbalanceado: 40
+➡ Caso: D-E (Direita-Esquerda)
+➡ Rotação: dupla (direita em 35, depois esquerd

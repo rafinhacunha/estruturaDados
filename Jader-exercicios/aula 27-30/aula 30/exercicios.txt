@@ -1,0 +1,135 @@
+## Nível Fácil I
+
+1. (AVL) Inserção: 50, 70, 80
+
+* Após 50:
+
+```
+50
+```
+
+* Após 70:
+
+```
+50
+  \
+   70
+```
+
+* Após 80 → desbalanceamento (caso D-D, rotação simples à esquerda em 50):
+
+```
+   70
+  /  \
+ 50   80
+```
+
+2. (Rubro-Negra) Árvore dada:
+
+```
+       11 (preto)
+      /   \
+   2 (vermelho) 14 (preto)
+   /    \
+  1(P)  7(P)
+```
+
+Verificação:
+
+* Raiz é preta: ✅
+* Nenhum nó vermelho tem filho vermelho: ✅
+* Todas as folhas nulas são pretas: ✅
+* Caminhos da raiz às folhas têm mesma altura preta: 2 (ex.: 11→14→NIL e 11→2→1→NIL): ✅
+* É árvore binária de busca: ✅
+
+➡ Resposta: Sim, é válida.
+
+---
+
+## Nível Fácil II
+
+3. (Geral) Altura h ∈ Θ(log n):
+   ➡ Significa que a altura da árvore cresce de forma logarítmica em relação ao número de nós.
+   ➡ Na prática, busca, inserção e remoção custam O(log n).
+   ➡ Garante eficiência, diferente de árvores degeneradas (O(n)).
+
+---
+
+## Nível Médio I
+
+1. (AVL) Inserção: 50, 30, 80, 70, 90, 60
+
+Passos principais:
+
+* Após inserir até 80:
+
+```
+    50
+   /  \
+ 30    80
+```
+
+* Inserindo 70 → ainda balanceada.
+* Inserindo 90 → desbalanceamento no 50 (caso D-D). Rotação simples à esquerda em 50:
+
+```
+    80
+   /  \
+  50   90
+ /  \
+30  70
+```
+
+* Inserindo 60 → desbalanceamento no 80 (caso D-E). Rotação dupla (direita em 70, esquerda em 80):
+  Árvore final:
+
+```
+      70
+     /  \
+   50    80
+  /  \      \
+ 30   60     90
+```
+
+2. (Rubro-Negra) Inserindo 25 na árvore dada (com raiz 30, filhos 20 e 40, etc):
+
+* Inserção de 25 como filho vermelho de 20.
+* Tio = 40 (preto).
+* Caso aplicado: Caso 3 (pai vermelho, tio preto, rotação + recoloração).
+  ➡ Resultado: rebalanceamento mantém propriedades.
+
+---
+
+## Nível Médio II
+
+3. (AVL) Diferença entre rebalancear inserção e remoção:
+
+* Inserção: apenas um nó pode ficar desbalanceado → 1 correção (rotação simples ou dupla).
+* Remoção: múltiplos nós ao longo do caminho até a raiz podem desbalancear → várias correções possíveis.
+
+---
+
+## Nível Avançado I
+
+1. (AVL - Remoção) Árvore dada com raiz 30.
+   Remover nó 40:
+
+* Substitui por filho direito (50).
+* Nó 30 pode ficar desbalanceado.
+* Rebalanceamento: verificar fatores de balanceamento de baixo para cima.
+  ➡ Possível necessidade de rotações em vários níveis.
+
+---
+
+## Nível Avançado II
+
+2. (Conceitual) Quando usar Rubro-Negra em vez de AVL:
+   ➡ Árvores Rubro-Negras são mais rápidas para inserções e remoções frequentes, pois fazem menos rotações.
+   ➡ São preferidas em sistemas que exigem grande número de operações dinâmicas (ex.: implementações de mapas/dicionários em bibliotecas padrão).
+   ➡ AVL é melhor para buscas intensivas, pois é mais rigidamente balanceada.
+
+3. (Teórico) Altura da Rubro-Negra ≤ 2 log2(n+1):
+
+* Porque cada caminho da raiz até uma folha tem mesma "altura preta" (bh).
+* Não existem dois nós vermelhos consecutivos → a altura máxima é no dobro da altura preta.
+* Assim, h ≤ 2·log2(n+1).
